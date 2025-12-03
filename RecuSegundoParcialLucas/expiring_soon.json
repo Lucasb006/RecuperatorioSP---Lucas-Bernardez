@@ -1,0 +1,4 @@
+[
+  {"tipo":"QUIMICO","nombre":"Ayudin","concentracion":"70%","vencimiento":"2025-12-31","warning":"Lavandina"},
+  {"tipo":"QUIMICO","nombre":"Cif","concentracion":"50%","vencimiento":"2025-12-16","warning":"Limpiador"}
+]

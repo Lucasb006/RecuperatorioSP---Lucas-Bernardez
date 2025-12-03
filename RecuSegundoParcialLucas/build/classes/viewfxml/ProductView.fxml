@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controladores.ControladorProductos">
+
+    <top>
+        <VBox spacing="8">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <Label text="Sistema de Gestión de Productos de Limpieza" />
+                <HBox spacing="10">
+                    <children>
+                        <VBox spacing="5">
+                            <children>
+                                <Label text="Nombre" />
+                                <TextField fx:id="txtNombre" promptText="Ej: Desengrasante Ultra"/>
+                            </children>
+                        </VBox>
+                        <VBox spacing="5">
+                            <children>
+                                <Label text="Concentración" />
+                                <TextField fx:id="txtConcentracion" promptText="Ej: 70% o 500 ml"/>
+                            </children>
+                        </VBox>
+                        <VBox spacing="5">
+                            <children>
+                                <Label text="Fecha de vencimiento" />
+                                <DatePicker fx:id="dpVencimiento"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox spacing="10">
+                    <children>
+                        <VBox spacing="5">
+                            <children>
+                                <Label text="Tipo" />
+                                <ChoiceBox fx:id="elegirTipo"/>
+                            </children>
+                        </VBox>
+                        <VBox spacing="5">
+                            <children>
+                                <Label text="Detalle específico" />
+                                <TextField fx:id="txtSpecific" promptText="Advertencia o etiqueta"/>
+                            </children>
+                        </VBox>
+                        <VBox spacing="5">
+                            <children>
+                                <Label text="Acciones" />
+                                <HBox spacing="8">
+                                    <children>
+                                        <Button fx:id="btnAgregar" text="Agregar" onAction="#onAgregar"/>
+                                        <Button fx:id="btnActualizar" text="Modificar" onAction="#onActualizar"/>
+                                        <Button fx:id="btnBorrar" text="Eliminar" onAction="#onBorrar"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox spacing="10">
+                    <children>
+                        <CheckBox fx:id="chkFilterSoon" text="Ver próximos a vencer (60 días)" onAction="#onFilterSoon"/>
+                        <Button fx:id="btnExportar" text="Exportar próximos a vencer a JSON" onAction="#onExportar"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="8">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <TableView fx:id="tableProducts" prefHeight="400">
+                    <columns>
+                        <TableColumn fx:id="colTipo" text="Tipo" prefWidth="100"/>
+                        <TableColumn fx:id="colNombre" text="Nombre" prefWidth="200"/>
+                        <TableColumn fx:id="colConcentracion" text="Concentración" prefWidth="120"/>
+                        <TableColumn fx:id="colVencimiento" text="Vencimiento" prefWidth="120"/>
+                        <TableColumn fx:id="colDetalle" text="Detalle específico" prefWidth="180"/>
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
